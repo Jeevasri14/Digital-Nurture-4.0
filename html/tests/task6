@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Event Feedback</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #eef;
+      padding: 30px;
+    }
+    form {
+      background-color: #fff;
+      padding: 20px;
+      width: 450px;
+      margin: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      width: 100%;
+      cursor: pointer;
+    }
+    #eventImage {
+      display: block;
+      margin: 20px auto;
+      width: 200px;
+      height: auto;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    #charCount {
+      font-size: 0.9em;
+      color: #555;
+      text-align: right;
+    }
+    #fee {
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <form id="feedbackForm">
+    <h2>Event Feedback</h2>
+
+    <label for="phone">Phone Number:</label>
+    <input type="text" id="phone" placeholder="Enter 10-digit phone number" onblur="validatePhone()" required>
+
+    <label for="eventSelect">Select Event:</label>
+    <select id="eventSelect" onchange="showFee()">
+      <option value="">Choose event</option>
+      <option value="Workshop" data-fee="100">Workshop</option>
+      <option value="Seminar" data-fee="50">Seminar</option>
+      <option value="Concert" data-fee="200">Concert</option>
+    </select>
+    <div id="fee">Event Fee: </div>
+
+    <label for="feedback">Your Feedback:</label>
+    <textarea id="feedback" rows="5" onkeyup="countChars()" placeholder="Type your feedback here..."></textarea>
+    <div id="charCount">0 characters</div>
+
+    <button type="button" onclick="submitFeedback()">Submit Feedback</button>
+  </form>
+
+  <img src="event.jpg" alt="Event" id="eventImage" ondblclick="enlargeImage()">
+
+  <script>
+    function validatePhone() {
+      const phone = document.getElementById('phone').value;
+      if (!/^\d{10}$/.test(phone)) {
+        alert("Please enter a valid 10-digit phone number.");
+        document.getElementById('phone').focus();
+      }
+    }
+
+    function showFee() {
+      const select = document.getElementById('eventSelect');
+      const fee = select.options[select.selectedIndex].getAttribute('data-fee');
+      document.getElementById('fee').textContent = fee ? `Event Fee: ₹${fee}` : 'Event Fee: ';
+    }
+
+    function submitFeedback() {
+      alert("Thank you! Your feedback has been submitted.");
+    }
+
+    function enlargeImage() {
+      const img = document.getElementById('eventImage');
+      img.style.transform = img.style.transform === "scale(1.5)" ? "scale(1)" : "scale(1.5)";
+    }
+
+    function countChars() {
+      const feedback = document.getElementById('feedback').value;
+      document.getElementById('charCount').textContent = `${feedback.length} characters`;
+    }
+  </script>
+
+</body>
+</html>
