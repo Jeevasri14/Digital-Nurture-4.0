@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Community Events Gallery</title>
+  <style>
+    .event-img {
+      border: 3px solid #444;
+      width: 300px;
+      height: 200px;
+    }
+    table {
+      margin: 20px auto;
+      border-collapse: collapse;
+    }
+    caption {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    td {
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <table>
+    <caption>Highlights from Recent Community Events</caption>
+    <tr>
+      <td><img src="event1.jpg" alt="Cultural Fest" title="Cultural Fest 2024" class="event-img"></td>
+      <td><img src="event2.jpg" alt="Food Drive" title="Annual Food Drive" class="event-img"></td>
+      <td><img src="event3.jpg" alt="Tree Plantation" title="Tree Plantation Drive" class="event-img"></td>
+    </tr>
+    <tr>
+      <td><img src="event4.jpg" alt="Blood Donation Camp" title="Blood Donation Camp" class="event-img"></td>
+      <td><img src="event5.jpg" alt="Community Cleanup" title="Community Cleanup Program" class="event-img"></td>
+      <td><img src="event6.jpg" alt="Health Checkup" title="Free Health Checkup Camp" class="event-img"></td>
+    </tr>
+  </table>
+</body>
+</html>
