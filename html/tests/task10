@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Debugging Demo Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    .container {
+      width: 80%;
+      margin: auto;
+    }
+
+    .card {
+      background-color: lightgray;
+      padding: 20px;
+      margin: 10px 0;
+      border-radius: 8px;
+      text-align: centerr;
+    }
+
+    .highlight {
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to the Debug Demo</h1>
+    <div class="card" id="infoCard">This is a card. Click the button below.</div>
+    <button onclick="handleClick()">Click Me</button>
+  </div>
+
+  <script>
+    console.log("Page loaded successfully");
+
+    function handleClick() {
+      const card = document.getElementById('infoCard');
+      const user = "Jeevasri";
+
+      console.log("Button clicked by:", user);
+
+      card.style.colorr = "red";
+
+      alert("User's full name is " + fullName);
+    }
+  </script>
+</body>
+</html>
