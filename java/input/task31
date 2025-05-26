@@ -15,6 +15,3 @@ public class JDBCExample {
     }
 }
 
-## Output
-  ID: 1 Name: Alice  
-  ID: 2 Name: Bob
